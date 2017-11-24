@@ -1,8 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="war" name="mes:war">
-    <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="mes.war">
-      <element id="artifact" artifact-name="mes:war exploded" />
-    </root>
-  </artifact>
-</component>
