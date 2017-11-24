@@ -1,0 +1,226 @@
+.main-sidebar, .left-side{
+    min-height:110%
+}
+.main-header .logo{
+    font-size: 13px;
+    text-decoration: none;
+}
+.sidebar-mini.sidebar-collapse .main-header .logo>.logo-mini{
+    font-size: 16px;
+}
+#main_section{
+    padding: 15px 0 0 15px;
+}
+#main_div{
+    margin: 0 0 0 0;
+}
+#mainChart{
+    height: inherit;
+    width:90%;
+    margin: 0;
+    padding:0 20px 0 20px;
+}
+#main{
+    height: inherit;
+    width:90%;
+    margin: 0;
+    padding:0 20px 0 20px
+}
+#main_div2{
+    margin: 1% 0 0 0;
+    padding: 0 1% 0 0;
+}
+.row2{
+    margin: 0;
+    padding: 0;
+}
+.drag{
+    height: inherit;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+.theme-config {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    overflow: hidden;
+}
+.theme-config-box {
+    margin-right: -220px;
+    position: relative;
+    z-index: 2000;
+    transition-duration: 0.8s;
+}
+.theme-config-box.show {
+    margin-right: 0;
+}
+.spin-icon {
+    background: #1ab394;
+    position: absolute;
+    padding: 7px 10px 7px 13px;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    top: 0;
+    left: 0;
+    width: 40px;
+    color: #fff;
+    cursor: pointer;
+}
+.skin-settings {
+    width: 220px;
+    margin-left: 40px;
+    background: #f3f3f4;
+}
+.skin-settings .title {
+    background: #f3f3f4;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    font-size: 16px;
+}
+.setings-item{
+    padding-left: 30px;
+}
+.widget-title{
+    padding-right: 3%;
+}
+.nav-pills>li.active>a, .nav-pills>li.active>a:focus, .nav-pills>li.active>a:hover{
+
+    background-color: #1abc9c;
+    color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    padding:11px 61px 11px 23px;
+    text-decoration: none;
+    white-space: nowrap;
+    -webkit-transition: 0.25s;
+    -moz-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+    -webkit-backface-visibility: hidden;
+    border: 0;
+    font-weight: 500;
+}
+#select_div{
+    left: 15px;
+}
+.span3{
+    width: 160px;
+    margin-left: 10px;
+}
+#search{
+    height:39px;
+    padding-left: 30px;
+    margin-left: 10px;
+    display: inline-block;
+}
+.search_icon{
+    margin-top: 4px;
+}
+.search_icon:hover{
+    opacity: .65;
+}
+.search_label{
+    margin-left: 7px;
+    font-size: 16px;
+}
+.ui-autocomplete {
+    max-height: 200px;
+    overflow-y: auto;
+    /* 防止水平滚动条 */
+    overflow-x: hidden;
+}
+#input{
+    width: inherit;
+    height: inherit;
+    margin: 0 20px 10px 20px;
+}
+#close{
+    margin-left: 8px;
+}
+
+.invisable{
+    display: none;
+}
+.search_view{
+    position: absolute;
+    top: 5%;
+    left: 11.6%;
+    width: 67.4%;
+    height: 100vh;
+    z-index: 10;
+    pointer-events: none;
+}
+.search_results{
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 400;
+    letter-spacing: -.01em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+    display: block;
+    background: #fff;
+    border-top: none;
+    color: #888;
+    max-height: calc(100% - 44px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+}
+.search_results_section{
+    border-top:1px solid #d6d6d6;
+    margin:0 40px;
+    padding:24px 0 18px
+}
+@media only screen and (max-width:767px) {
+    .search_results_section {
+        border-color: #ccc;
+        margin: 0;
+        padding: 23px 0 40px
+    }
+}
+.search_results_section.with-content{
+    display: block
+}
+#search_input{
+    margin-left: 7%;
+    width: 80%;
+}
+.search_results_list{
+    list-style: none;
+    padding-top: 5px;
+}
+
+[class*="span"] {
+    float: left;
+    min-height: 1px;
+    margin-left: 40px;
+}
+.select-form{
+    margin: 0;
+    padding: 0;
+    overflow: visible;!important;
+}
+.select-div{
+    float: left;
+    width: 17%;
+    height:39px;
+}
+.select-control{
+    height: 39px;
+    width: 100%;
+    border-radius: 6px;
+}
+.select-label{
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding: 8px 8px 0 6px;
+    /*width:6%;*/
+    height: 30px;
+}
+
+

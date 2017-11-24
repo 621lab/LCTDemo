@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<configuration >
+    <property name="log_dir" value="/Users/sun/Logs"></property>
+    <variable name="project_name" value="mes" />
+
+    <appender naem="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %date [%thread] %-5level %logger{35} - %msg %n
+            </pattern>
+        </encoder>
+    </appender>
+    <timestamp key="bySecond" datePattern="yyyy-MM-dd"/>
+
+    <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+        <file>${log_dir}/${project_name}/error-${bySecond}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{35} - %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="DAYFILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <Encoding>UTF-8</Encoding>
+        <file>${log_dir}/${project_name}/logFile.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>logFile.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <!-- keep 30 days' worth of history capped at 3GB total size -->
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>100MB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{35} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--root与logger是父子关系，没有特别定义则默认为root，任何一个类只会和一个logger对应,
+    要么是定义的logger，要么是root，判断的关键在于找到这个logger，然后判断这个logger的appender和level。-->
+    <root level="debug">
+        <appender-ref ref="console"/>
+        <appender-ref ref="DAYFILE"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+
+</configuration>
