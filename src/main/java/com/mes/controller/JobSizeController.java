@@ -86,6 +86,7 @@ public class JobSizeController {
         optimize3d.setAnalysisDataList(processCycleServ.getAnalysisData(sql));
         optimize3d.setxAliasList(jobSizeServ.getSingleValueList(sqlXAlias));
         optimize3d.setyAliasList(jobSizeServ.getSingleValueList(sqlYAlias));
+        System.out.println("123");
         return optimize3d;
     }
 }
