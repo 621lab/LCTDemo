@@ -41,7 +41,7 @@
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                 </button>
                <%-- <button type="button" class="btn btn-primary">
-                    提交更改
+                    提交更改9999999999999
                 </button>--%>
             </div>
         </div><!-- /.modal-content -->
