@@ -7,7 +7,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
                     &times;
                 </button>
-                <h4 class="modal-title" id="myModalLabel" style="color: red">
+                <h4 class="modal-title" id="myModalLabel" color="#ffe510">
                 </h4>
             </div>
             <div class="modal-body table-responsive">
@@ -40,9 +40,9 @@
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭
                 </button>
-                <button type="button" class="btn btn-primary">
+               <%-- <button type="button" class="btn btn-primary">
                     提交更改
-                </button>
+                </button>--%>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
