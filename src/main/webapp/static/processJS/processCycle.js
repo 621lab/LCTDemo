@@ -40,6 +40,7 @@ function getProcessCycle(start,end,workshop,train_type,flag) {
                         var processName = data[dataIndex].name;
                         var processId = params.name;
                         getOptimizeData(processId);
+                        //#666
                     }
                 }
             });
