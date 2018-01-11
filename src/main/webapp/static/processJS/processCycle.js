@@ -63,8 +63,10 @@ function getOptimizeData(processId){
             document.getElementById('myModalLabel').innerHTML="";
             for (i = 0; i < data.analysisData3List.length; i++){
                 if(i==0){
-                    document.getElementById('myModalLabel').innerHTML = "工序:"+data.analysisData3List[0].process_ID +" 异常信息";
+                    document.getElementsByClassName('myModalLabel').innerHTML = "工序:"+data.analysisData3List[0].process_ID +" 异常信息";
+                    document.getElementsByClassName('myModalLabel')[0].id = data.analysisData3List[0].process_ID;
                 }
+
                  var hang = '<tr><td>' + data.analysisData3List[i].order_HEADER + '</td>'
                      + '<td>' + data.analysisData3List[i].order_LINE + '</td>'
                      + '<td>' + data.analysisData3List[i].process_ID + '</td>'
@@ -109,6 +111,63 @@ function getOptimizeData(processId){
             main1.dispose();
             main1 = echarts.init(document.getElementById("main1"));
             main1.setOption(option);
+        }
+    })
+}
+function pageSplit(i) {
+    var pageNow = $("#pageNow");
+    var processId = document.getElementsByClassName('myModalLabel')[0].id;
+    if(i==1){
+        pageNow++;
+    }
+    else if(i == -1){
+        pageNow--;
+    }else{
+        pageNow = 1;
+    }
+    document.getElementById("pageNow").innerHTML=pageNow;
+    $.ajax({
+        url:"processCycle/splitPage",
+        type:"post",
+        data:{"processId":processId,"pageNow":pageNow},
+        dataType:"json",
+        async:true,
+        timeout:6000,
+        success:function (data) {
+            document.getElementById('motai').innerHTML="";
+            document.getElementById('myModalLabel').innerHTML="";
+            if(pageNow==1){
+                document.getElementById("pageCount").innerHTML=data.pageCount;
+            }
+            document.getElementById("pageCount")
+            for (i = 0; i < data.analysisData3List.length; i++){
+                if(i==0){
+                    document.getElementById('myModalLabel').innerHTML = "工序:"+data.analysisData3List[0].process_ID +" 异常信息";
+                }
+
+                var hang = '<tr><td>' + data.analysisData3List[i].order_HEADER + '</td>'
+                    + '<td>' + data.analysisData3List[i].order_LINE + '</td>'
+                    + '<td>' + data.analysisData3List[i].process_ID + '</td>'
+                    + '<td>' + data.analysisData3List[i].process_NAME + '</td>'
+                    + '<td>' + data.analysisData3List[i].project_NAME + '</td>'
+                    + '<td>' + data.analysisData3List[i].wbs + '</td>'
+                    + '<td>' + data.analysisData3List[i].product_NAME + '</td>'
+                    + '<td>' + data.analysisData3List[i].train_NUMBER + '</td>'
+                    + '<td>' + data.analysisData3List[i].carriage_NUMBER + '</td>'
+                    + '<td>' + data.analysisData3List[i].carriage_TYPE + '</td>'
+                    + '<td>' + data.analysisData3List[i].op_START + '</td>'
+                    + '<td>' + data.analysisData3List[i].op_END + '</td>'
+                    + '<td>' + data.analysisData3List[i].process_CYCLE + '</td>'
+                    + '<td>' + data.analysisData3List[i].manu_CYCLE + '</td>'
+                    + '<td>' + data.analysisData3List[i].team_ID + '</td>'
+                    + '<td>' + data.analysisData3List[i].worker_NUM + '</td></tr>'
+                document.getElementById('motai').innerHTML += hang;
+            }
+            if(data.analysisData3List.length>0){
+                $('#myModal2').modal({
+                    keyboard: true
+                });
+            }
         }
     })
 }
